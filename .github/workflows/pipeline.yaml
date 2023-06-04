@@ -22,7 +22,7 @@ jobs:
       - name: Tests
         run: npm run test
       - name: E2E Tests
-        uses: cypress-io/github-action
+        uses: cypress-io/github-action@v5
         with:
           command: npm run test:e2e
           start: npm run start-prod
