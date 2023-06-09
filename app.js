@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 8080
 
 app.use(express.static('dist'))
 
@@ -10,5 +10,5 @@ app.get('/health', (_req, res) => {
 })
 
 app.listen(PORT, () => {
-  console.log('server started on port 3000')
+  console.log(`server started on port ${PORT}`)
 })

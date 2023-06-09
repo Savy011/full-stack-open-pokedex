@@ -4,6 +4,8 @@
 ARG NODE_VERSION=16.20.0
 FROM node:${NODE_VERSION}-slim as base
 
+RUN apt-get update; apt install -y curl
+
 LABEL fly_launch_runtime="Node.js"
 
 # Node.js app lives here
@@ -41,5 +43,5 @@ FROM base
 COPY --from=build /app /app
 
 # Start the server by default, this can be overwritten at runtime
-EXPOSE 3000
+EXPOSE 8080
 CMD [ "npm", "run", "start" ]
