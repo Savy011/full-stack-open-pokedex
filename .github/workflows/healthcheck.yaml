@@ -14,3 +14,17 @@ jobs:
           url: https://savy-fso-pokedex.fly.dev/
           max-attempts: 2
           retry-delay: 7s
+      - name: Health Check passed
+        uses: rjstone/discord-webhook-notify@v1
+        if: ${{ success() }}
+        with:
+          severity: info
+          details: Health Check passed, Website is running fine
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+      - name: Health Check failed
+        uses: rjstone/discord-webhook-notify@v1
+        if: ${{ failure() }}
+        with:
+          severity: info
+          details: Health Check failed, check website status on fly.io dashboard
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
