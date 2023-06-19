@@ -4,6 +4,12 @@ This repository is used for the [CI/CD](https://fullstackopen.com/en/part11) mod
 
 Fork the repository to complete course exercises
 
+---
+
+| Submission Repository for Ex 11.20 & 11.21 |
+|---|
+| [Link](https://github.com/Savy011/fso-cicd-phonebook) |
+
 ## Commands
 
 Start by running `npm install` inside the project folder
